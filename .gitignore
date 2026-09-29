@@ -1,0 +1,66 @@
+# Private datasets and annotations
+data/
+datasets/
+annotations/
+*.jsonl
+
+# Trained models and exported networks
+models/
+weights/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.engine
+*.tflite
+
+# Experiment artifacts
+outputs/
+runs/
+results/
+logs/
+*.npy
+*.npz
+*.csv
+*.log
+
+# Images, videos, and archives are excluded from this code-only release
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tif
+*.tiff
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.zip
+*.rar
+*.7z
+
+# Local configuration and credentials
+.env
+.env.*
+*.local.yaml
+*.local.yml
+*.pem
+*.key
+
+# Python and IDE files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.idea/
+.vscode/
+*.iml
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+desktop.ini
