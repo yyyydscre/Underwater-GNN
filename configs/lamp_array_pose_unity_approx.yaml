@@ -1,0 +1,48 @@
+# Pose-only template extracted from zhxin2-3-1.4.5unity.py.
+#
+# Source axes were converted to x=right, y=down, z=front-to-rear. The source
+# front/rear separation is 5 Unity units, confirmed to be 5 metres. Therefore
+# one source unit is one metre and the coordinates below retain metric scale.
+geometry:
+  source: zhxin2-3-1.4.5unity.py
+  source_layer_spacing_units: 5.0
+  measured_layer_spacing_m: 5.0
+  unity_unit_scale_m: 1.0
+  status: metric_scale_confirmed
+
+# Calibration copied from the supplied script. It is for 2448x2048 pixels.
+# Most v*.jpg files have that exact size. For 2448x1600 inputs, the project
+# assumes a centred vertical crop and shifts cy from 1017.771 to 793.771 px.
+camera:
+  calibration_image_size: [2448, 2048]
+  image_transform: center_crop_resize
+  camera_matrix:
+    - [2094.69629447420, 0.0, 1208.87257189407]
+    - [0.0, 2117.21915023223, 1017.77106506302]
+    - [0.0, 0.0, 1.0]
+  distortion: [0.0181142931376980, 0.0248430983142790, 0.0, 0.0, 0.0]
+
+matching:
+  k_neighbors: 4
+  min_match_confidence: 0.05
+  expected_colors:
+    front: green
+    rear: blue
+
+# Mapping from source labels:
+# F0/F1/F2/F3/F4/F5/F6 = light1/light3/light2/light4/light5/light6/light7
+# R0/R1/R2/R3/R4/R5    = light8/light11/light9/light12/light10/light13
+lights:
+  - {id: F0, layer: front, color: green, xyz_m: [-3.00,  0.00, 0.00]}
+  - {id: F1, layer: front, color: green, xyz_m: [ 3.00,  0.00, 0.00]}
+  - {id: F2, layer: front, color: green, xyz_m: [-3.00,  1.50, 0.00]}
+  - {id: F3, layer: front, color: green, xyz_m: [ 3.00,  1.50, 0.00]}
+  - {id: F4, layer: front, color: green, xyz_m: [-1.50,  3.00, 0.00]}
+  - {id: F5, layer: front, color: green, xyz_m: [ 0.00,  3.00, 0.00]}
+  - {id: F6, layer: front, color: green, xyz_m: [ 1.50,  3.00, 0.00]}
+  - {id: R0, layer: rear,  color: blue,  xyz_m: [-1.50, -1.35, 5.00]}
+  - {id: R1, layer: rear,  color: blue,  xyz_m: [ 1.50, -1.35, 5.00]}
+  - {id: R2, layer: rear,  color: blue,  xyz_m: [-1.50, -0.30, 5.00]}
+  - {id: R3, layer: rear,  color: blue,  xyz_m: [ 1.50,  0.30, 5.00]}
+  - {id: R4, layer: rear,  color: blue,  xyz_m: [-1.50,  1.32, 5.00]}
+  - {id: R5, layer: rear,  color: blue,  xyz_m: [ 1.50,  1.32, 5.00]}

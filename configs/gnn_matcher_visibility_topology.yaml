@@ -1,0 +1,26 @@
+# Ablation switch: topology signature is enabled by selecting
+# --feature-mode geometry_uncertainty_topology with this configuration.
+# It preserves the current visibility-aware missing-light expert and only adds
+# five rotation-invariant multi-scale node-distance features (input_dim 10 -> 15).
+model:
+  input_dim: 15
+  hidden_dim: 128
+  layers: 4
+  cross_layers: 2
+  heads: 4
+  dropout: 0.08
+  dustbin_score: 0.8
+  visibility_aware: true
+  visibility_score_weight: 0.25
+training:
+  learning_rate: 0.0005
+  weight_decay: 0.0001
+  sinkhorn_iterations: 60
+  select_best_on_validation: true
+  validation_selection_metric: balanced_visibility
+  augmentation_close_epochs: 5
+  occlusion_probability: 0.70
+  occlusion_max_drop: 8
+  occlusion_min_visible: 4
+  missing_template_weight: 0.45
+  visibility_loss_weight: 0.30

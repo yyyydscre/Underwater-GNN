@@ -1,0 +1,6 @@
+# YOLO object-detection dataset. It contains lamp boxes only, not white-core keypoints.
+path: datasets/underwater_light_box
+train: images/train
+val: images/val
+names:
+  0: lamp

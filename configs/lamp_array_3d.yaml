@@ -1,0 +1,32 @@
+# Replace xyz_m with measured centers in the real fixture coordinate system.
+# x: right, y: down, z: from the front layer toward the rear layer (metres).
+# The layout follows the observed U-shaped 7-light front layer and 2-by-3
+# 6-light rear layer. It is still a demonstration template: measure it.
+camera:
+  camera_matrix:
+    - [1850.0, 0.0, 1224.0]
+    - [0.0, 1850.0, 800.0]
+    - [0.0, 0.0, 1.0]
+  distortion: [0.0, 0.0, 0.0, 0.0, 0.0]
+
+matching:
+  k_neighbors: 4
+  min_match_confidence: 0.05
+  expected_colors:
+    front: green
+    rear: blue
+
+lights:
+  - {id: F0, layer: front, color: green, xyz_m: [-0.180, -0.120, 0.000]}
+  - {id: F1, layer: front, color: green, xyz_m: [0.180, -0.102, 0.000]}
+  - {id: F2, layer: front, color: green, xyz_m: [-0.180, -0.018, 0.000]}
+  - {id: F3, layer: front, color: green, xyz_m: [0.178, -0.004, 0.000]}
+  - {id: F4, layer: front, color: green, xyz_m: [-0.105, 0.100, 0.000]}
+  - {id: F5, layer: front, color: green, xyz_m: [0.002, 0.110, 0.000]}
+  - {id: F6, layer: front, color: green, xyz_m: [0.108, 0.106, 0.000]}
+  - {id: R0, layer: rear, color: blue, xyz_m: [-0.044, -0.132, 0.180]}
+  - {id: R1, layer: rear, color: blue, xyz_m: [0.080, -0.122, 0.180]}
+  - {id: R2, layer: rear, color: blue, xyz_m: [-0.044, -0.072, 0.180]}
+  - {id: R3, layer: rear, color: blue, xyz_m: [0.078, -0.062, 0.180]}
+  - {id: R4, layer: rear, color: blue, xyz_m: [-0.045, -0.012, 0.180]}
+  - {id: R5, layer: rear, color: blue, xyz_m: [0.076, -0.004, 0.180]}

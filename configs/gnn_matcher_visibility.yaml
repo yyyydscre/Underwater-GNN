@@ -1,0 +1,18 @@
+model:
+  input_dim: 10
+  hidden_dim: 128
+  layers: 4
+  cross_layers: 2
+  heads: 4
+  dropout: 0.08
+  dustbin_score: 0.8
+  visibility_aware: true
+  visibility_score_weight: 0.25
+training:
+  learning_rate: 0.0005
+  weight_decay: 0.0001
+  sinkhorn_iterations: 60
+  select_best_on_validation: true
+  augmentation_close_epochs: 5
+  missing_template_weight: 0.3
+  visibility_loss_weight: 0.2
