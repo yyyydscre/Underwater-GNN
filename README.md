@@ -86,9 +86,9 @@ is not included in this repository. See [DATA_AVAILABILITY.md](DATA_AVAILABILITY
 
 ## Code Availability
 
-The permanent public repository URL will be added here and to the manuscript
-after publication. See [CODE_AVAILABILITY.md](CODE_AVAILABILITY.md) for the
-submission-ready statement.
+The source code is publicly available at
+[yyyydscre/Underwater-GNN](https://github.com/yyyydscre/Underwater-GNN). See
+[CODE_AVAILABILITY.md](CODE_AVAILABILITY.md) for the submission-ready statement.
 
 ## Citation
 
